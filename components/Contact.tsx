@@ -1,3 +1,4 @@
+"use client"
 import { useState, FormEvent } from "react";
 import { Send, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";

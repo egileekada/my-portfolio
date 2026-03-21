@@ -1,9 +1,13 @@
+"use client";
+
+import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import SectionHeading from "./SectionHeading";
 
 const projects = [
   {
+    id: "aura",
     title: "Aura Design System",
     description: "A comprehensive component library used across 8 products, serving 200k+ monthly users.",
     tech: ["React", "TypeScript", "Storybook", "Tailwind"],
@@ -12,6 +16,7 @@ const projects = [
     live: "#",
   },
   {
+    id: "metric",
     title: "Metric Dashboard",
     description: "Real-time analytics platform with interactive charts, filters, and data export capabilities.",
     tech: ["Next.js", "D3.js", "PostgreSQL", "WebSocket"],
@@ -20,6 +25,7 @@ const projects = [
     live: "#",
   },
   {
+    id: "nomad",
     title: "Nomad Travel App",
     description: "A travel planning tool for digital nomads with itinerary building and cost tracking.",
     tech: ["React", "Mapbox", "Node.js", "MongoDB"],
@@ -28,6 +34,7 @@ const projects = [
     live: "#",
   },
   {
+    id: "typeform",
     title: "Typeform Clone",
     description: "An interactive form builder with conditional logic, themes, and analytics.",
     tech: ["React", "Zustand", "Framer Motion", "Supabase"],
@@ -36,6 +43,7 @@ const projects = [
     live: "#",
   },
   {
+    id: "fintrace",
     title: "Fintrace",
     description: "Personal finance tracker with AI-powered categorization and spending insights.",
     tech: ["TypeScript", "Tailwind", "OpenAI", "Plaid"],
@@ -44,6 +52,7 @@ const projects = [
     live: "#",
   },
   {
+    id: "palette",
     title: "Palette Studio",
     description: "A color palette generator for designers, with export to CSS, Figma, and Tailwind.",
     tech: ["React", "Canvas API", "Tailwind", "PWA"],
@@ -53,47 +62,68 @@ const projects = [
   },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
     <div
       ref={ref}
-      className={`group rounded-xl overflow-hidden bg-card border border-border/50 shadow-md shadow-background/50 transition-all duration-700 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 ${
+      className={`group rounded-xl overflow-hidden bg-card border border-border/50 shadow-md transition-all duration-700 will-change-transform ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{
-        transitionDelay: isVisible ? `${index * 80}ms` : "0ms",
+        transitionDelay: `${index * 80}ms`,
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
+      {/* Image */}
       <div className="relative overflow-hidden aspect-[3/2]">
-        <img
+        <Image
           src={project.image}
           alt={project.title}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+
+        {/* Hover overlay */}
         <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           <a
             href={project.github}
-            className="p-2 rounded-full bg-card/80 text-foreground hover:text-primary transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-card/80 hover:text-primary transition-colors"
             aria-label={`${project.title} GitHub`}
           >
             <Github size={18} />
           </a>
+
           <a
             href={project.live}
-            className="p-2 rounded-full bg-card/80 text-foreground hover:text-primary transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-card/80 hover:text-primary transition-colors"
             aria-label={`${project.title} live site`}
           >
             <ExternalLink size={18} />
           </a>
         </div>
       </div>
+
+      {/* Content */}
       <div className="p-6">
         <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+          {project.description}
+        </p>
+
         <div className="flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <span
@@ -118,9 +148,10 @@ export default function Projects() {
           title="Selected work"
           description="A collection of projects I've built, from design systems to full-stack applications."
         />
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} />
+            <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
       </div>

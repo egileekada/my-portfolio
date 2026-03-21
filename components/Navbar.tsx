@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,7 +31,7 @@ export default function Navbar() {
     >
       <div className="container-narrow flex items-center justify-between h-16">
         <a href="#" className="text-xl font-bold tracking-tight text-gradient">
-          AR.
+          EE.
         </a>
 
         {/* Desktop */}
