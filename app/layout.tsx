@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Egile Portfolio",
     images: [
       {
-        url: "/images/me.png", // 👈 your image path
+        url: "/images/me.jpg", // 👈 your image path
         width: 1200,
         height: 630,
         alt: "Egile Ekada Portfolio",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Egile Ekada | Frontend Developer",
     description: "Frontend developer building modern web and mobile applications.",
-    images: ["/images/me.png"], // 👈 same image
+    images: ["/images/me.jpg"], // 👈 same image
   },
 };
 
