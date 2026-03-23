@@ -15,10 +15,10 @@ const skillGroups = [
     category: "Backend & Data",
     items: ["Node.js", "PostgreSQL", "REST APIs", "GraphQL", "Supabase"],
   },
-  {
-    category: "Testing & Quality",
-    items: ["Vitest", "Playwright", "Cypress", "Accessibility", "Lighthouse"],
-  },
+  // {
+  //   category: "Testing & Quality",
+  //   items: ["Vitest", "Playwright", "Cypress", "Accessibility", "Lighthouse"],
+  // },
 ];
 
 export default function Skills() {

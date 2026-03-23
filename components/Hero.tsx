@@ -16,7 +16,7 @@ export default function Hero() {
                     </p>
 
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
-                        Alex Rivera
+                        Egileonisofien Ekada
                         <span className="block text-gradient">
                             Frontend Developer
                         </span>
@@ -40,7 +40,7 @@ export default function Hero() {
 
                     <div className="flex items-center gap-4">
                         <a
-                            href="https://github.com"
+                            href="https://github.com/egileekada"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -49,7 +49,7 @@ export default function Hero() {
                         </a>
 
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/egileonisofien-ekada-63583416b/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-foreground transition-colors"

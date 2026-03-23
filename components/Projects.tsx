@@ -4,62 +4,59 @@ import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import SectionHeading from "./SectionHeading";
+import { textLimit } from "@/utils/textlimit";
 
 const projects = [
   {
-    id: "aura",
-    title: "Aura Design System",
-    description: "A comprehensive component library used across 8 products, serving 200k+ monthly users.",
-    tech: ["React", "TypeScript", "Storybook", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    id: "ryzly",
+    title: "Ryzly",
+    description: "Developed key frontend features for a challenge-based platform connecting talents to career opportunities. Implemented interactive project workflows, enabling users to complete real-world challenges and build verifiable portfolios that increase visibility to employers.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind", "TanStack Query"],
+    image: "/images/ryzly.png", 
+    live: "https://www.ryzly.app/",
   },
   {
-    id: "metric",
-    title: "Metric Dashboard",
-    description: "Real-time analytics platform with interactive charts, filters, and data export capabilities.",
-    tech: ["Next.js", "D3.js", "PostgreSQL", "WebSocket"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    id: "chasescroll",
+    title: "Chasescroll",
+    description: "Contributed to the development of a modern event management platform that streamlines event creation, discovery, and participation. Implemented dynamic user interfaces, optimized data fetching, and improved user experience for seamless event interactions.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind", "TanStack Query"],
+    image: "/images/chasescroll.png",
+    live: "https://www.chasescroll.com/",
   },
   {
-    id: "nomad",
-    title: "Nomad Travel App",
-    description: "A travel planning tool for digital nomads with itinerary building and cost tracking.",
-    tech: ["React", "Mapbox", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    id: "monosend",
+    title: "Monosend",
+    description: "Built and maintained the admin dashboard and landing page for a fintech platform, improving usability and performance while supporting core features like transactions and user management.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind"],
+    image: "/images/monosend.png", 
+    live: "https://www.monosend.app/",
   },
   {
-    id: "typeform",
-    title: "Typeform Clone",
-    description: "An interactive form builder with conditional logic, themes, and analytics.",
-    tech: ["React", "Zustand", "Framer Motion", "Supabase"],
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    id: "hiroek",
+    title: "Hiroek",
+    description: "An event management platform that helps organizers launch events quickly, manage ticket sales, engage audiences, and streamline event operations with built-in marketing support.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind"],
+    image: "/images/hiroek.png", 
+    live: "https://www.hiroek.io/",
   },
-  {
-    id: "fintrace",
-    title: "Fintrace",
-    description: "Personal finance tracker with AI-powered categorization and spending insights.",
-    tech: ["TypeScript", "Tailwind", "OpenAI", "Plaid"],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
-  },
-  {
-    id: "palette",
-    title: "Palette Studio",
-    description: "A color palette generator for designers, with export to CSS, Figma, and Tailwind.",
-    tech: ["React", "Canvas API", "Tailwind", "PWA"],
-    image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
-  },
+  // {
+  //   id: "fintrace",
+  //   title: "Fintrace",
+  //   description: "Personal finance tracker with AI-powered categorization and spending insights.",
+  //   tech: ["TypeScript", "Tailwind", "OpenAI", "Plaid"],
+  //   image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+  //   github: "#",
+  //   live: "#",
+  // },
+  // {
+  //   id: "palette",
+  //   title: "Palette Studio",
+  //   description: "A color palette generator for designers, with export to CSS, Figma, and Tailwind.",
+  //   tech: ["React", "Canvas API", "Tailwind", "PWA"],
+  //   image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&h=400&fit=crop",
+  //   github: "#",
+  //   live: "#",
+  // },
 ];
 
 function ProjectCard({
@@ -74,7 +71,7 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`group rounded-xl overflow-hidden bg-card border border-border/50 shadow-md transition-all duration-700 will-change-transform ${
+      className={`group rounded-xl flex flex-col h-full overflow-hidden bg-card border border-border/50 shadow-md transition-all duration-700 will-change-transform ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{
@@ -83,7 +80,7 @@ function ProjectCard({
       }}
     >
       {/* Image */}
-      <div className="relative overflow-hidden aspect-[3/2]">
+      <div className="relative overflow-hidden aspect-3/2">
         <Image
           src={project.image}
           alt={project.title}
@@ -94,15 +91,7 @@ function ProjectCard({
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-card/80 hover:text-primary transition-colors"
-            aria-label={`${project.title} GitHub`}
-          >
-            <Github size={18} />
-          </a>
+           
 
           <a
             href={project.live}
@@ -121,10 +110,10 @@ function ProjectCard({
         <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
 
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-          {project.description}
+          {textLimit(project.description, 150)}
         </p>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {project.tech.map((t) => (
             <span
               key={t}

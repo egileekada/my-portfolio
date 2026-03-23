@@ -23,7 +23,7 @@ export default function About() {
           <SectionHeading
             label="About"
             title="A bit about me"
-            description="I'm a frontend developer based in San Francisco with 5+ years of experience building products for startups and design agencies."
+            description="I'm a frontend developer based in Nigeria with 5+ years of experience building products for startups and design agencies."
           />
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">

@@ -4,32 +4,32 @@ import SectionHeading from "./SectionHeading";
 
 const jobs = [
   {
-    role: "Senior Frontend Engineer",
-    company: "Streamline",
-    period: "2023 – Present",
-    description:
-      "Leading the design system team, building reusable components used across 4 product lines. Improved page load performance by 38%.",
-  },
-  {
     role: "Frontend Developer",
-    company: "Tactile Studio",
-    period: "2021 – 2023",
+    company: "Freelance / Contract",
+    period: "2023 - Present",
     description:
-      "Built client-facing dashboards and interactive data visualizations for fintech and healthcare clients.",
+      "Building scalable web and mobile applications using React, Next.js, and React Native. Integrated payment solutions (Paystack), implemented authentication flows, and optimized performance across multiple client projects.",
   },
   {
-    role: "UI Engineer",
-    company: "Mosaic Labs",
-    period: "2020 – 2021",
+    role: "Frontend Engineer",
+    company: "Personal Projects",
+    period: "2022 - Present",
     description:
-      "Developed the component library and contributed to the accessibility audit, achieving WCAG AA compliance.",
+      "Developed full-featured dashboards with TanStack Query and modern state management. Implemented infinite scrolling, reusable UI components, and responsive design systems using Tailwind and Chakra UI.",
   },
   {
-    role: "Junior Developer",
-    company: "Freelance",
-    period: "2019 – 2020",
+    role: "Mobile App Developer",
+    company: "Independent",
+    period: "2022 - 2023",
     description:
-      "Built marketing sites and small web apps for local businesses using React and WordPress.",
+      "Built cross-platform mobile apps with React Native and Expo, including map integrations, location services, and Google Places API for real-time user interactions.",
+  },
+  {
+    role: "Junior Frontend Developer",
+    company: "Self-Taught / Learning Phase",
+    period: "2021 - 2022",
+    description:
+      "Gained strong foundations in JavaScript, React, and modern web development. Built multiple projects including landing pages, portfolio sites, and API-driven applications.",
   },
 ];
 

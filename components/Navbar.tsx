@@ -46,7 +46,7 @@ export default function Navbar() {
             </a>
           ))}
           <Button variant="hero" size="sm" asChild>
-            <a href="/resume.pdf" download>
+            <a href="/Ekada_Egileonisofien_CV.pdf" download>
               <Download className="mr-1" size={14} />
               Resume
             </a>
@@ -78,7 +78,7 @@ export default function Navbar() {
               </a>
             ))}
             <Button variant="hero" size="sm" className="w-fit" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/Ekada_Egileonisofien_CV.pdf" download>
                 <Download className="mr-1" size={14} />
                 Resume
               </a>
