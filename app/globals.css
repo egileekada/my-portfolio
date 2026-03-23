@@ -147,30 +147,3 @@
   }
 }
 
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-reveal-up {
-  animation: reveal-up 0.8s ease forwards;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, 8px);
-  }
-}
-
-.animate-float {
-  animation: float 2s ease-in-out infinite;
-}
