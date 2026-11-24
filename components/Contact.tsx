@@ -51,11 +51,10 @@ export default function Contact() {
         <section id="contact" className="section-padding">
             <div className="container-narrow" ref={ref}>
                 <div
-                    className={`transition-all duration-700 ${
-                        isVisible
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-6"
-                    }`}
+                    className={`transition-all duration-700 ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                        }`}
                     style={{
                         transitionTimingFunction:
                             "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -133,7 +132,7 @@ export default function Contact() {
                                     Get in touch directly
                                 </h3>
                                 <a
-                                    href="mailto:alex@example.com"
+                                    href="mailto:egileoniso.ekada@gmail.com"
                                     className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2"
                                 >
                                     <Mail size={16} />
