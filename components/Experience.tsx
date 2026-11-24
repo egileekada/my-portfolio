@@ -19,6 +19,28 @@ const jobs = [
     },
     {
         role: "Front-End Developer",
+        company: "Ryzly",
+        period: "2025 - 2026",
+        location: "Remote",
+        description:
+            "Challenge-based platform connecting talents to career opportunities. Built key frontend features including interactive project workflows, using Jotai for state management, WebSockets for real-time features, handling API authentication, pagination and rate limiting, and contributing to AWS deployments.",
+        achievements: [
+            "Built interactive project workflows and key frontend features for the challenge-based platform",
+            "Managed application state with Jotai and implemented real-time features using WebSockets",
+            "Handled API authentication, pagination, and rate limiting across frontend integrations",
+            "Contributed to AWS deployments for production releases",
+        ],
+        techStack: [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind",
+            "TanStack Query",
+            "Jotai",
+        ],
+    },
+    {
+        role: "Front-End Developer",
         company: "Hiroek",
         period: "2024 - 2025",
         location: "Remote",

@@ -10,8 +10,8 @@ const projects = [
   {
     id: "ryzly",
     title: "Ryzly",
-    description: "Developed key frontend features for a challenge-based platform connecting talents to career opportunities. Implemented interactive project workflows, enabling users to complete real-world challenges and build verifiable portfolios that increase visibility to employers.",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind", "TanStack Query"],
+    description: "Challenge-based platform connecting talents to career opportunities. Built key frontend features including interactive project workflows, using Jotai for state management, WebSockets for real-time features, handling API authentication, pagination and rate limiting, and contributing to AWS deployments.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind", "TanStack Query", "Jotai"],
     image: "/images/ryzly.png", 
     live: "https://www.ryzly.app/",
   },
